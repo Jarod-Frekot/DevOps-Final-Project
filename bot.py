@@ -1,6 +1,10 @@
 import discord
+import dotenv
+import os
 
 client = discord.Client()
+dotenv.load_dotenv()
+api_key = os.getenv('API_KEY')
 
 @client.event
 async def on_ready():
@@ -15,11 +19,11 @@ async def on_message(message):
         await message.channel.send('Hello {.author}!'.format(message))
 
     if 'good bot' in message.content.lower():
-        await message.channel.send('c:')
+        await message.channel.send(file=discord.File("popcat.png"))
 
     if 'bad bot' in message.content.lower():
         await message.channel.send(':c')
 
 
 
-client.run('ODMyMjk3OTU1NjQ1MDYzMTg4.YHhv3w.vY8Zk0G3qpzZDT9p7Kwm_S_2ngI')
+client.run(api_key)
