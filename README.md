@@ -6,6 +6,13 @@ The goal of our project was to generate a Discord bot (his name is Felix) that r
 ## Set Up
 
 
+## Responses
+1. $good bot - Returns a cat smiling png file
+2. $bad bot - Returns a sad face
+3. $mood - Returns a random png from a folder of them
+4. $hello - Returns a Hello {Your Name}!
+
+
 ## Technologies Used
 1. [Python](https://www.python.org/)
 3. [Vagrant](https://www.vagrantup.com/)
