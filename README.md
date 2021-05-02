@@ -4,12 +4,34 @@
 The goal of our project was to generate a Discord bot (his name is Felix) that responds to certain statements within a Discord channel. Essentially, you can run `vagrant up` and this will start Felix and run his corresponding script. Once that occurs, Felix will be awake and ready to respond within the channel, based on certain keywords or phrases that others write. We are also hosting the project in Heroku's cloud platform. Felix is automatde in the sense that when you run `vagrant up`, he is awake and ready to respond in the channel, and the project is hosted within Heroku's cloud platform automatically. 
 
 ## Set Up
+There are a few initial set up aspects you must do before running either locally or virtually. 
+
+1. Create a .env file `nano .env`
+2. Add Discord api key in the .env file `API_KEY=[insert key here]`, to save and exit: control X, Y, enter
+3. Lastly, you need to make sure the Discord certificate is installed correctly on your machine. Paste this in terminal: `sudo /Applications/Python\ 3.9/Install\ Certificates.command ; exit;
+ -- pip install --upgrade certifi`. However, if you are running a different version of python, say 3.7, replace the `3.9` with `3.7`. To check your version, run `python --version` from your root directory. 
 
 
-## Responses
-1. $good bot - Returns a cat smiling png file
-2. $bad bot - Returns a sad face
-3. $mood - Returns a random png from a folder of them
+### Running Locally
+Be sure the three steps above are completed first!
+
+1. Create a virtual environment `python -m venv .venv`
+2. Activate the virtual environment `source .venv/bin/activate`
+3. Install requirements `pip install -r requirements.txt`
+4. Run the script `python bot.py`
+
+### Running Virtually
+Be sure the three steps above are completed first!
+
+1. Run `vagrant up` - that's it!
+
+To shutdown the machine, run `vagrant destroy -f`. 
+
+
+## Functionality of Felix
+1. $good bot - Returns a cat smiling png file (will also return this file if a message contains 'good bot')
+2. $bad bot - Returns a sad face (will also return this file if a message contains 'bad bot')
+3. $mood - Returns a random png with Felix's possible mood at the time
 4. $hello - Returns a Hello {Your Name}!
 
 

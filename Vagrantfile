@@ -7,10 +7,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y python3-venv
-
     mkdir /app
     cd /app
-
     python3 -m venv /.venv
     cp /felix/requirements.txt /app
     cp /felix/bot.py /app
