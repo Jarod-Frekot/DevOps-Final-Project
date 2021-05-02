@@ -4,6 +4,7 @@ Requires=network.target
 
 [Service]
 Type=simple
+WorkingDirectory=/app
 ExecStart=/.venv/bin/python /app/bot.py
 
 [Install]
