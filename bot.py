@@ -28,6 +28,4 @@ async def on_message(message):
     if '$mood' in message.content.lower():
         await message.channel.send(file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
 
-
-
 client.run(api_key)
