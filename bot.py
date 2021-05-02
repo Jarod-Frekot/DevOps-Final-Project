@@ -1,6 +1,7 @@
 import discord
 import dotenv
 import os
+from random import randint
 
 client = discord.Client()
 dotenv.load_dotenv()
@@ -16,13 +17,16 @@ async def on_message(message):
         return
 
     if message.content.lower().startswith('$hello'):
-        await message.channel.send('Hello {.author}!'.format(message))
+        await message.channel.send('Hello {.author.display_name}!'.format(message))
 
-    if 'good bot' in message.content.lower():
+    if '$goodbot' in message.content.lower() or 'good bot' in message.content.lower():
         await message.channel.send(file=discord.File("popcat.png"))
 
-    if 'bad bot' in message.content.lower():
+    if '$badbot' in message.content.lower() or 'bad bot' in message.content.lower():
         await message.channel.send(':c')
+
+    if '$mood' in message.content.lower():
+        await message.channel.send(file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
 
 
 
