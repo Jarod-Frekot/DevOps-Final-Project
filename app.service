@@ -1,0 +1,10 @@
+[Unit]
+Description=Felix The Good Bot
+Requires=network.target
+
+[Service]
+Type=simple
+ExecStart=/.venv/bin/python /app/bot.py
+
+[Install]
+WantedBy=multi-user.target
