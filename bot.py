@@ -48,7 +48,7 @@ async def on_message(message):
 
 if __name__ == '__main__':
     #thread_one = Thread(target = client.run(api_key)).start()
-    # thread_one = Thread(target = app.run, args = ('0.0.0.0', port)).start()
+    Thread(target = app.run, args = ('0.0.0.0', port)).start()
     app.run(threaded=True, port = 5000)
     # thread_one.start()
     # thread_two.start()
