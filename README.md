@@ -33,7 +33,7 @@ To shutdown the machine, run `vagrant destroy -f`.
 2. $bad bot - Returns a sad face (will also return this file if a message contains 'bad bot')
 3. $mood - Returns a random png with Felix's possible mood at the time
 4. $hello - Returns a Hello {Your Name}!
-5. &kanye - Returns a random quote by accessing the kanye.rest API.
+5. $kanye - Returns a random quote by accessing the kanye.rest API.
 
 
 ## Technologies Used
