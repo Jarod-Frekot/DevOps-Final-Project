@@ -48,8 +48,9 @@ async def on_message(message):
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    thread_one = Thread(target = app.run, args = ('0.0.0.0', port)).start()
-    thread_two = Thread(target = client.run(api_key)).start()
+    port = int(os.environ.get('PORT', 5000)
+    thread_one = Thread(target = client.run(api_key)).start()
+    # thread_one = Thread(target = app.run, args = ('0.0.0.0', port)).start()
+    app.run(threaded=True, host='0.0.0.0', port = port)
     # thread_one.start()
     # thread_two.start()
