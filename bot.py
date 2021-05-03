@@ -33,6 +33,7 @@ async def on_message(message):
         await message.channel.send('$bad bot - Returns a sad face will also return this file if a message contains bad bot')
         await message.channel.send("$mood - Returns a random png with Felix's possible mood at the time")
         await message.channel.send("$hello - Returns a Hello {Your Name}!")
+        await messgea.channel.send("$kanye - Returns a random quote by accessing the kanye.rest API.")
 
 
 client.run(api_key)
