@@ -40,6 +40,13 @@ async def on_message(message):
     if '$kanye' in message.content.lower():
         await message.channel.send("```"+requests.get(url = kanye).json()['quote']+"``` - Kanye")
 
+    if '$help' in message.content.lower():
+        await message.channel.send('`$goodbot` - Returns a cat smiling png file (will also return this file if a message contains good bot\n'+
+                                    '`$badbot` - Returns a sad face will also return this file if a message contains bad bot\n'+
+                                    '`$mood` - Returns a random png with Felix\'s possible mood at the time \n'+
+                                    '`$kanye` - Returns a random Kanye West quote \n'+
+                                    '`$hello` - Returns a Hello {Your Name}!')
+
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
