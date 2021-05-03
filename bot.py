@@ -28,4 +28,11 @@ async def on_message(message):
     if '$mood' in message.content.lower():
         await message.channel.send(file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
 
+    if '$help' in message.content.lower():
+        await message.channel.send('$good bot - Returns a cat smiling png file (will also return this file if a message contains good bot')
+        await message.channel.send('$bad bot - Returns a sad face will also return this file if a message contains bad bot')
+        await message.channel.send("$mood - Returns a random png with Felix's possible mood at the time")
+        await message.channel.send("$hello - Returns a Hello {Your Name}!")
+
+
 client.run(api_key)
