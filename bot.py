@@ -47,10 +47,8 @@ async def on_message(message):
                                     '`$hello` - Returns a Hello {Your Name}!')
 
 if __name__ == '__main__':
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000)
     #thread_one = Thread(target = client.run(api_key)).start()
     # thread_one = Thread(target = app.run, args = ('0.0.0.0', port)).start()
-    app.run(threaded=True, host='0.0.0.0', port = port)
+    app.run(threaded=True, port = 5000)
     # thread_one.start()
     # thread_two.start()
