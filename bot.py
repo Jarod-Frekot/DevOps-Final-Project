@@ -3,17 +3,10 @@ import dotenv
 import os
 import requests
 from random import randint
-from flask import Flask, redirect
-from threading import Thread
 
-app = Flask(__name__)
 client = discord.Client()
 api_key = os.environ['API_TOKEN']
 kanye = "https://api.kanye.rest/"
-
-@app.route('/')
-def invite():
-    return redirect("https://discord.com/oauth2/authorize?client_id=832297955645063188&permissions=247808&scope=bot", code=302)
 
 @client.event
 async def on_ready():
@@ -46,9 +39,4 @@ async def on_message(message):
                                     '`$kanye` - Returns a random Kanye West quote \n'+
                                     '`$hello` - Returns a Hello {Your Name}!')
 
-if __name__ == '__main__':
-    #thread_one = Thread(target = client.run(api_key)).start()
-    Thread(target = app.run, args = ('0.0.0.0', port)).start()
-    app.run(threaded=True, port = 5000)
-    # thread_one.start()
-    # thread_two.start()
+client.run(api_key)
