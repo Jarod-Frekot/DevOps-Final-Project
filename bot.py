@@ -9,7 +9,7 @@ from threading import Thread
 app = Flask(__name__)
 client = discord.Client()
 dotenv.load_dotenv()
-api_key = os.getenv('API_KEY')
+api_key = os.environ('API_KEY')
 kanye = "https://api.kanye.rest/"
 
 @app.route('/')
