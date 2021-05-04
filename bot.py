@@ -27,7 +27,7 @@ async def on_message(message):
         await message.channel.send(':c')
 
     if '$mood' in message.content.lower():
-        await message.channel.send(file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
+        await message.channel.send('```{}```'.format(message.content.split('$mood')[1]),file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
 
     if '$kanye' in message.content.lower():
         await message.channel.send("```"+requests.get(url = kanye).json()['quote']+"``` - Kanye")
@@ -35,7 +35,7 @@ async def on_message(message):
     if '$help' in message.content.lower():
         await message.channel.send('`$goodbot` - Returns a cat smiling png file (will also return this file if a message contains good bot\n'+
                                     '`$badbot` - Returns a sad face will also return this file if a message contains bad bot\n'+
-                                    '`$mood` - Returns a random png with Felix\'s possible mood at the time \n'+
+                                    '`$mood {optional:caption}` - Returns a random png with Felix\'s possible mood at the time \n'+
                                     '`$kanye` - Returns a random Kanye West quote \n'+
                                     '`$hello` - Returns a Hello {Your Name}!')
 
