@@ -26,10 +26,10 @@ async def on_message(message):
     if '$badbot' in message.content.lower() or 'bad bot' in message.content.lower():
         await message.channel.send(':c')
 
-    if '$mood' in message.content.lower() && message.content.split('$mood')[1] is None:
+    if '$mood' in message.content.lower() and message.content.split('$mood')[1] is None:
         await message.channel.send(file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
 
-    if '$mood' in message.content.lower() && message.content.split('$mood')[1] not None:
+    if '$mood' in message.content.lower() and message.content.split('$mood')[1] not None:
         await message.channel.send('```{}```'.format(message.content.split('$mood')[1]),file=discord.File("moods/{num}.png".format(num = randint(1, 34))))
 
     if '$kanye' in message.content.lower():
